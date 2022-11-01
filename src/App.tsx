@@ -1,10 +1,17 @@
+import { Provider } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
 import './App.sass';
+import Layout from './Layout';
+
+import { store } from './redux';
 
 function App() {
   return (
-    <div className="App">
-     AAAAAAAAAa
-    </div>
+    <Provider store={store}>
+      <Routes>
+        <Route path="/*" element={<Layout />} />
+      </Routes>
+    </Provider>
   );
 }
 
